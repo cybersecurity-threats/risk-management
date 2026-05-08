@@ -13,7 +13,7 @@
             --card-bg: #11171f;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             margin: 0;
@@ -45,6 +45,9 @@
             background: rgba(10, 14, 20, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
@@ -69,7 +72,10 @@
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
+            transition: color 0.3s;
         }
+
+        nav ul li a:hover { color: var(--cyber-blue); }
 
         /* Hero Section */
         header {
@@ -160,7 +166,7 @@
             font-style: italic;
         }
 
-        /* Pillars Section */
+        /* Framework Section */
         .section-header { text-align: center; margin: 40px 0 60px; }
         .sub-label { color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 10px; }
         .main-title { font-family: 'Orbitron'; font-size: 2.2rem; margin: 0; }
@@ -184,10 +190,34 @@
         .pillar-card:hover { border-color: var(--cyber-blue); background: #161d27; }
 
         .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-top: 0; color: #fff; }
-        .pillar-card p { color: #a0aab2; font-size: 0.9rem; margin-bottom: 40px; }
-        .pillar-tag { 
-            position: absolute; bottom: 30px; left: 35px;
-            font-family: 'Orbitron'; font-size: 0.7rem; color: var(--cyber-blue); opacity: 0.5;
+        .pillar-card p { color: #a0aab2; font-size: 0.95rem; margin-bottom: 10px; }
+
+        /* Threat Analysis Box */
+        .threat-box {
+            max-width: 900px;
+            margin: 0 auto 100px;
+            background: rgba(0, 242, 255, 0.02);
+            border: 1px dashed rgba(0, 242, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .threat-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .threat-item {
+            background: var(--bg-dark);
+            border: 1px solid var(--cyber-blue);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
         footer {
@@ -208,13 +238,13 @@
 </head>
 <body>
 
-<nav>
+<nav id="top">
     <div class="logo">Cyber-Risk Project</div>
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Framework</a></li>
-        <li><a href="#">Threats</a></li>
-        <li><a href="#">Team</a></li>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#framework">Framework</a></li>
+        <li><a href="#threats">Threats</a></li>
+        <li><a href="#team">Team</a></li>
     </ul>
 </nav>
 
@@ -234,7 +264,7 @@
         </div>
         <div class="stat-item">
             <span class="stat-value">74%</span>
-            <span class="stat-label">Involve Human Factor</span>
+            <span class="stat-label">Involve Human Element</span>
         </div>
     </div>
 </header>
@@ -247,30 +277,37 @@
     </div>
 </section>
 
-<div class="section-header">
-    <div class="sub-label">// OUR MODEL</div>
+<div id="framework" class="section-header">
+    <div class="sub-label">OUR MODEL</div>
     <h2 class="main-title">The HRMF Framework</h2>
 </div>
 
 <div class="pillar-grid">
     <div class="pillar-card">
-        <h3>Technical Proficiency</h3>
+        <h3>Technical Factors</h3>
         <p>Analyzing defensive capabilities through Multi-Factor Authentication (MFA), AI-driven detection, and system updates.</p>
-        <span class="pillar-tag">PILLAR I</span>
     </div>
     <div class="pillar-card">
-        <h3>Behavioral Awareness</h3>
-        <p>Measuring the human factor, focusing on phishing recognition, password hygiene, and digital decision-making.</p>
-        <span class="pillar-tag">PILLAR II</span>
+        <h3>Behavioral Factors</h3>
+        <p>Measuring user susceptibility to phishing, password hygiene patterns, and psychological decision-making under digital threat.</p>
     </div>
     <div class="pillar-card">
         <h3>Social Media Exposure</h3>
         <p>Evaluating how oversharing and privacy settings on digital platforms act as a mediating variable for cyber risk.</p>
-        <span class="pillar-tag">PILLAR III</span>
     </div>
 </div>
 
-<footer>
+<div id="threats" class="threat-box">
+    <div class="sub-label">THREAT ANALYSIS</div>
+    <h2 class="main-title" style="font-size: 1.8rem; margin-top: 10px;">Primary Research Targets</h2>
+    <div class="threat-list">
+        <div class="threat-item">Phishing Attacks</div>
+        <div class="threat-item">Ransomware</div>
+        <div class="threat-item">Social Engineering</div>
+    </div>
+</div>
+
+<footer id="team">
     <p><strong>Research Team:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan</p>
     <p>University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat</p>
     <p>&copy; 2026 | info@cyber-risk-study.com</p>
