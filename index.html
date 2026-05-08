@@ -1,196 +1,223 @@
-``html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cybersecurity Threats and Risk Management</title>
-<style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #0a0d11;
-    color: #e5f3f9;
-    scroll-behavior: smooth;
-  }
-  header {
-    text-align: center;
-    padding: 80px 20px 40px;
-    background: linear-gradient(145deg, #0e1420 40%, #0a0f1a 100%);
-    border-bottom: 1px solid #1b2631;
-  }
-  header h1 {
-    font-size: 2.5rem;
-    color: #3ac8c9;
-    letter-spacing: 1px;
-  }
-  header p {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 1.05rem;
-    color: #b8c7cc;
-    line-height: 1.6;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Risk & Resilience | HRMF</title>
+    <style>
+        :root {
+            --cyber-blue: #3ac8c9;
+            --cyber-glow: rgba(58, 200, 201, 0.3);
+            --bg-dark: #0a0d11;
+            --card-bg: #111821;
+        }
 
-  .stat-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto;
-    background: rgba(58, 200, 201, 0.08);
-    border: 1px solid rgba(58, 200, 201, 0.5);
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    font-size: 1.8rem;
-    color: #3ac8c9;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(58, 200, 201, 0.3);
-  }
+        * { box-sizing: border-box; }
 
-  .framework {
-    text-align: center;
-    padding: 60px 20px;
-  }
-  .framework h2 {
-    font-size: 1.8rem;
-    color: #3ac8c9;
-    margin-bottom: 40px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 20px;
-  }
-  .card {
-    background: #10161d;
-    border: 1px solid #1b2631;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: left;
-    transition: transform 0.3s ease;
-  }
-  .card h3 {
-    color: #3ac8c9;
-    margin-bottom: 10px;
-  }
-  .card p {
-    color: #b9cdd5;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    border-color: #3ac8c9;
-  }
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-color: var(--bg-dark);
+            color: #e5f3f9;
+            overflow-x: hidden;
+        }
 
-  .threats {
-    background: #0e141b;
-    text-align: center;
-    padding: 70px 20px;
-    margin-top: 50px;
-  }
-  .threats h2 {
-    font-size: 1.8rem;
-    color: #3ac8c9;
-    margin-bottom: 30px;
-  }
-  .threat-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  .threat-item {
-    background: #101821;
-    border: 1px solid #1b2631;
-    border-radius: 10px;
-    padding: 20px 30px;
-    color: #b8cdd2;
-    font-size: 1rem;
-    transition: background 0.3s;
-  }
-  .threat-item:hover {
-    background: rgba(58,200,201,0.1);
-    color: #3ac8c9;
-  }
+        /* The "AI Grid" Background you liked */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(var(--cyber-glow) 1px, transparent 1px),
+                linear-gradient(90deg, var(--cyber-glow) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.2;
+        }
 
-  footer {
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid #1b2631;
-    font-size: 0.9rem;
-    color: #9bb2b9;
-  }
-  footer a {
-    color: #3ac8c9;
-    text-decoration: none;
-  }
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 1.9rem;
-    }
-    .stat-block {
-      width: 200px;
-      height: 200px;
-      font-size: 1.4rem;
-    }
-  }
-</style>
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #1b2631 0%, var(--bg-dark) 100%);
+            border-bottom: 2px solid var(--cyber-blue);
+            box-shadow: 0 0 30px var(--cyber-glow);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--cyber-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+            text-shadow: 0 0 15px var(--cyber-blue);
+        }
+
+        header p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+            color: #b8c7cc;
+        }
+
+        /* Striking Stat Circle */
+        .stat-container {
+            display: flex;
+            justify-content: center;
+            margin: -50px 0 50px 0;
+        }
+
+        .stat-circle {
+            width: 220px;
+            height: 220px;
+            background: var(--bg-dark);
+            border: 3px solid var(--cyber-blue);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 40px var(--cyber-glow);
+            z-index: 10;
+        }
+
+        .stat-circle strong {
+            font-size: 3.5rem;
+            color: var(--cyber-blue);
+        }
+
+        .stat-circle span {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--cyber-blue);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        /* HRMF Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #1b2631;
+            padding: 30px;
+            border-radius: 15px;
+            border-top: 5px solid var(--cyber-blue);
+            transition: 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px var(--cyber-glow);
+        }
+
+        .card h3 {
+            color: var(--cyber-blue);
+            margin-top: 0;
+        }
+
+        /* Threats Section */
+        .threats-box {
+            background: rgba(58, 200, 201, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 60px;
+            border: 1px dashed var(--cyber-blue);
+            text-align: center;
+        }
+
+        .threat-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .threat-item {
+            background: var(--bg-dark);
+            padding: 12px 25px;
+            border: 1px solid var(--cyber-blue);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #07090d;
+            border-top: 1px solid #1b2631;
+            margin-top: 80px;
+        }
+
+        footer a { color: var(--cyber-blue); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>Cybersecurity Threats and Risk Management</h1>
-  <p>
-    Examining evolving cybersecurity threats in both real-world environments and social media to design a <strong>Holistic Risk Management Framework (HRMF)</strong> integrating <em>Technical</em>, <em>Behavioral</em>, and <em>Social Media Exposure</em> factors.
-  </p>
+    <h1>Cyber-Risk & Resilience</h1>
+    <p>Examining evolving threats to design a <strong>Holistic Risk Management Framework (HRMF)</strong> merging technical defense with human behavior.</p>
 </header>
 
-<section class="stat-block">
-  <div><strong>68%</strong><br/>Human Factor in Breaches</div>
-</section>
+<div class="stat-container">
+    <div class="stat-circle">
+        <strong>68%</strong>
+        <span>Human Factor<br>in Breaches</span>
+    </div>
+</div>
 
-<section class="framework">
-  <h2>Holistic Risk Management Framework (HRMF)</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Behavioral Factors</h3>
-      <p>Digital impulsivity, cognitive biases, and psychological susceptibility affecting online decision-making and exposure to phishing or manipulation.</p>
+<div class="container">
+    <h2>The HRMF Framework</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Behavioral Factors</h3>
+            <p>Evaluating digital impulsivity and psychological susceptibility to manipulation and phishing lures.</p>
+        </div>
+        <div class="card">
+            <h3>Technical Factors</h3>
+            <p>Leveraging MFA, AI-driven detection systems, and automated security updates for proactive defense.</p>
+        </div>
+        <div class="card">
+            <h3>Social Media Exposure</h3>
+            <p>Analyzing how digital footprints and privacy settings mediate risk for individuals and organizations.</p>
+        </div>
     </div>
-    <div class="card">
-      <h3>Technical Factors</h3>
-      <p>Security tools like Multi-Factor Authentication (MFA), software updates, and AI-driven detection systems enhancing defensive capability.</p>
-    </div>
-    <div class="card">
-      <h3>Social Media Exposure</h3>
-      <p>Oversharing, weak privacy settings, and extensive digital footprints that amplify personal and organizational cybersecurity risk.</p>
-    </div>
-  </div>
-</section>
 
-<section class="threats">
-  <h2>Key Cyber Threats</h2>
-  <div class="threat-list">
-    <div class="threat-item">Phishing Attacks</div>
-    <div class="threat-item">Ransomware</div>
-    <div class="threat-item">Social Engineering</div>
-  </div>
-</section>
+    <div class="threats-box">
+        <h2>Key Targeted Threats</h2>
+        <div class="threat-list">
+            <div class="threat-item">Phishing</div>
+            <div class="threat-item">Ransomware</div>
+            <div class="threat-item">Social Engineering</div>
+        </div>
+    </div>
+</div>
 
 <footer>
-  <p><strong>Team Members:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan</p>
-  <p>Contact: <a href="mailto:info@cyber-risk-study.com">info@cyber-risk-study.com</a></p>
-  <p>&copy; 2026 University of Bahrain — ITIS 499 Senior Project</p>
+    <p><strong>Research Team:</strong> Sara Mohammed, Khadija Abdulla, & Lujain Alashwan</p>
+    <p>University of Bahrain | ITIS 499 Senior Project 2026</p>
+    <p>Contact: <a href="mailto:info@cyber-risk-study.com">info@cyber-risk-study.com</a></p>
 </footer>
 
 </body>
 </html>
-``
