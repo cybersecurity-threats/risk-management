@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber-Risk & Resilience | HRMF</title>
+    <title>Cybersecurity Threats and Risk Management in real-world and social media</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyber-blue: #3ac8c9;
-            --cyber-blue-glow: rgba(58, 200, 201, 0.4);
-            --bg-dark: #06090f;
-            --card-bg: #0d121b;
+            --cyber-blue: #00f2ff;
+            --cyber-blue-glow: rgba(0, 242, 255, 0.3);
+            --bg-dark: #0a0e14;
+            --card-bg: #11171f;
         }
 
         * { box-sizing: border-box; }
@@ -30,9 +30,9 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
-                linear-gradient(rgba(58, 200, 201, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(58, 200, 201, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: -1;
         }
 
@@ -41,205 +41,175 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            position: sticky;
-            top: 0;
-            background: rgba(6, 9, 15, 0.9);
+            padding: 25px 8%;
+            background: rgba(10, 14, 20, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.1);
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
             color: var(--cyber-blue);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
+            margin: 0;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #b8c7cc;
-            font-size: 0.9rem;
+            color: #e0e0e0;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
-            transition: color 0.3s;
         }
-
-        nav ul li a:hover { color: var(--cyber-blue); }
 
         /* Hero Section */
         header {
             text-align: center;
-            padding: 100px 10%;
+            padding: 100px 10% 60px;
         }
 
         .badge {
             display: inline-block;
-            padding: 6px 15px;
+            padding: 6px 18px;
             border: 1px solid var(--cyber-blue);
-            border-radius: 20px;
+            border-radius: 50px;
             color: var(--cyber-blue);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-family: 'Orbitron', sans-serif;
-            margin-bottom: 25px;
-            background: rgba(58, 200, 201, 0.1);
+            margin-bottom: 30px;
+            background: rgba(0, 242, 255, 0.05);
+            letter-spacing: 2px;
         }
 
         header h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
+            font-size: 3rem; 
             margin: 0;
-            line-height: 1.1;
-            background: linear-gradient(to right, #fff, var(--cyber-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+            color: #fff;
+            text-shadow: 0 0 20px var(--cyber-blue-glow);
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         header p {
-            max-width: 700px;
-            margin: 30px auto;
-            color: #b8c7cc;
-            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 35px auto;
+            color: #a0aab2;
+            font-size: 1.15rem;
         }
 
-        /* Stats Bar */
-        .stats-bar {
+        /* Stats Row */
+        .stats-row {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin: 40px 0;
-            font-family: 'Orbitron', sans-serif;
+            gap: 80px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 242, 255, 0.1);
+            padding-top: 40px;
         }
 
         .stat-item { text-align: center; }
-        .stat-value { font-size: 1.5rem; color: var(--cyber-blue); display: block; }
-        .stat-label { font-size: 0.65rem; color: #6e7a8a; text-transform: uppercase; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: #fff; display: block; font-family: 'Orbitron'; }
+        .stat-label { font-size: 0.65rem; color: #6a7783; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Highlight Card (The 68% Box) */
-        .highlight-card {
-            max-width: 900px;
-            margin: 60px auto;
-            background: var(--card-bg);
-            border: 1px solid #1b2631;
-            border-radius: 20px;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(58, 200, 201, 0.1);
-            position: relative;
-            overflow: hidden;
+        /* Highlight Section */
+        .highlight-section {
+            padding: 60px 10%;
+            display: flex;
+            justify-content: center;
         }
 
-        .highlight-card::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(58, 200, 201, 0.05) 0%, transparent 70%);
+        .highlight-card {
+            width: 100%;
+            max-width: 1000px;
+            background: radial-gradient(circle at center, #16202b, var(--bg-dark));
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 15px;
+            padding: 70px 40px;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(0, 242, 255, 0.1);
         }
 
         .highlight-card h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 5rem;
+            font-size: 5.5rem;
             color: var(--cyber-blue);
             margin: 0;
-            text-shadow: 0 0 30px var(--cyber-blue-glow);
+            text-shadow: 0 0 40px var(--cyber-blue-glow);
         }
 
         .highlight-card p {
             font-size: 1.4rem;
             color: #ffffff;
-            margin: 10px 0;
+            margin: 15px 0 5px;
         }
 
-        .highlight-card span {
-            color: #6e7a8a;
-            font-size: 0.85rem;
+        .highlight-card .source {
+            color: #6a7783;
+            font-size: 0.8rem;
             font-style: italic;
         }
 
         /* Pillars Section */
-        .section-label {
-            text-align: center;
-            color: var(--cyber-blue);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-        }
+        .section-header { text-align: center; margin: 40px 0 60px; }
+        .sub-label { color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 10px; }
+        .main-title { font-family: 'Orbitron'; font-size: 2.2rem; margin: 0; }
 
         .pillar-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            padding: 0 8%;
-            margin-bottom: 80px;
+            padding: 0 8% 100px;
         }
 
         .pillar-card {
             background: var(--card-bg);
-            border: 1px solid #1b2631;
-            padding: 40px 30px;
-            border-radius: 12px;
-            transition: 0.3s;
+            border: 1px solid #1e2630;
+            padding: 45px 35px;
+            border-radius: 10px;
             position: relative;
+            transition: 0.3s;
         }
 
-        .pillar-card:hover {
-            border-color: var(--cyber-blue);
-            transform: translateY(-5px);
-        }
+        .pillar-card:hover { border-color: var(--cyber-blue); background: #161d27; }
 
-        .pillar-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        .pillar-card p {
-            color: #b8c7cc;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-        }
-
-        .pillar-tag {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.7rem;
-            color: var(--cyber-blue);
-            opacity: 0.6;
+        .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-top: 0; color: #fff; }
+        .pillar-card p { color: #a0aab2; font-size: 0.9rem; margin-bottom: 40px; }
+        .pillar-tag { 
+            position: absolute; bottom: 30px; left: 35px;
+            font-family: 'Orbitron'; font-size: 0.7rem; color: var(--cyber-blue); opacity: 0.5;
         }
 
         footer {
+            padding: 80px 8%;
+            background: #05070a;
+            border-top: 1px solid #1e2630;
             text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #1b2631;
-            color: #6e7a8a;
-            font-size: 0.85rem;
+            color: #6a7783;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .stats-bar { flex-direction: column; gap: 20px; }
-            nav ul { display: none; }
+            header h1 { font-size: 2rem; }
+            .stats-row { flex-direction: column; gap: 30px; }
+            .highlight-card h2 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">CYBER // RISK</div>
+    <div class="logo">Cyber-Risk Project</div>
     <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Framework</a></li>
@@ -250,10 +220,10 @@
 
 <header>
     <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
-    <h1>Cyber-Risk & Resilience</h1>
-    <p>A Holistic Framework (HRMF) for the Modern Digital Age — Bridging technical defense, human behavior, and social media exposure into a unified risk model[cite: 5, 305].</p>
+    <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
+    <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
     
-    <div class="stats-bar">
+    <div class="stats-row">
         <div class="stat-item">
             <span class="stat-value">3.4B+</span>
             <span class="stat-label">Phishing Emails Daily</span>
@@ -269,36 +239,40 @@
     </div>
 </header>
 
-<div class="highlight-card">
-    <h2>68%</h2>
-    <p>of breaches involve a human element</p>
-    <span>— Based on the 2024 Verizon Data Breach Investigations Report (DBIR) </span>
-</div>
+<section class="highlight-section">
+    <div class="highlight-card">
+        <h2>68%</h2>
+        <p>of breaches involve a human element</p>
+        <div class="source">— Based on the 2024 Verizon Data Breach Investigations Report (DBIR)</div>
+    </div>
+</section>
 
-<div class="section-label">// OUR MODEL</div>
-<h2 class="section-title">The HRMF Framework</h2>
+<div class="section-header">
+    <div class="sub-label">// OUR MODEL</div>
+    <h2 class="main-title">The HRMF Framework</h2>
+</div>
 
 <div class="pillar-grid">
     <div class="pillar-card">
         <h3>Technical Proficiency</h3>
-        <p>Evaluates an individual's ability to implement and maintain technical security controls like MFA and secure configurations[cite: 358].</p>
+        <p>Analyzing defensive capabilities through Multi-Factor Authentication (MFA), AI-driven detection, and system updates.</p>
         <span class="pillar-tag">PILLAR I</span>
     </div>
     <div class="pillar-card">
         <h3>Behavioral Awareness</h3>
-        <p>Measures security-conscious behavior patterns including password hygiene and phishing recognition[cite: 357].</p>
+        <p>Measuring the human factor, focusing on phishing recognition, password hygiene, and digital decision-making.</p>
         <span class="pillar-tag">PILLAR II</span>
     </div>
     <div class="pillar-card">
         <h3>Social Media Exposure</h3>
-        <p>Assesses digital footprint risks from social platforms, including oversharing and privacy settings[cite: 359].</p>
+        <p>Evaluating how oversharing and privacy settings on digital platforms act as a mediating variable for cyber risk.</p>
         <span class="pillar-tag">PILLAR III</span>
     </div>
 </div>
 
 <footer>
-    <p><strong>Research Team:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan [cite: 1]</p>
-    <p>University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat [cite: 1]</p>
+    <p><strong>Research Team:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan</p>
+    <p>University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat</p>
     <p>&copy; 2026 | info@cyber-risk-study.com</p>
 </footer>
 
