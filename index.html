@@ -11,6 +11,7 @@
             --cyber-blue-glow: rgba(0, 242, 255, 0.3);
             --bg-dark: #0a0e14;
             --card-bg: #11171f;
+            --header-height: 80px;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -36,12 +37,13 @@
             z-index: -1;
         }
 
-        /* Navigation */
+        /* Fixed Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 8%;
+            padding: 0 8%;
+            height: var(--header-height);
             background: rgba(10, 14, 20, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 242, 255, 0.1);
@@ -77,10 +79,15 @@
 
         nav ul li a:hover { color: var(--cyber-blue); }
 
+        /* Scroll Target Offsets (Fixes the header covering titles) */
+        header, .section-header, .threat-box, footer {
+            scroll-margin-top: calc(var(--header-height) + 20px);
+        }
+
         /* Hero Section */
         header {
             text-align: center;
-            padding: 100px 10% 60px;
+            padding: 80px 10% 60px;
         }
 
         .badge {
@@ -238,17 +245,17 @@
 </head>
 <body>
 
-<nav id="top">
+<nav>
     <div class="logo">Cyber-Risk Project</div>
     <ul>
-        <li><a href="#top">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#threats">Threats</a></li>
         <li><a href="#team">Team</a></li>
     </ul>
 </nav>
 
-<header>
+<header id="home">
     <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
     <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
