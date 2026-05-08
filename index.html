@@ -63,7 +63,8 @@
         nav ul li a { text-decoration: none; color: #e0e0e0; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
         nav ul li a:hover { color: var(--cyber-blue); }
 
-        header, .section-header, .threat-box, #game-section, footer {
+        /* Navigation Targets */
+        #home, .section-header, .threat-box, #game-section, footer {
             scroll-margin-top: calc(var(--header-height) + 20px);
         }
 
@@ -77,12 +78,12 @@
         .pillar-card:hover { border-color: var(--cyber-blue); background: #161d27; }
         .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; color: #fff; }
 
-        /* ACTIVITY SECTION */
+        /* UPDATED ACTIVITY SECTION */
         #game-section { padding: 60px 10% 100px; text-align: center; }
         .game-container { max-width: 600px; margin: 0 auto; background: #161d27; padding: 40px; border-radius: 20px; border: 1px solid var(--cyber-blue); box-shadow: 0 0 30px var(--cyber-blue-glow); }
         .quiz-option { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #0a0e14; border: 1px solid #1e2630; color: white; border-radius: 10px; cursor: pointer; transition: 0.3s; font-family: 'Inter'; text-align: left; }
         .quiz-option:hover { border-color: var(--cyber-blue); background: rgba(0, 242, 255, 0.05); }
-        #result-display { display: none; margin-top: 20px; font-weight: bold; color: var(--cyber-blue); font-family: 'Orbitron'; }
+        #result-display { display: none; margin-top: 20px; font-weight: bold; color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 1.2rem; }
 
         .threat-box { max-width: 900px; margin: 0 auto 100px; background: rgba(0, 242, 255, 0.02); border: 1px dashed rgba(0, 242, 255, 0.3); border-radius: 15px; padding: 40px; text-align: center; }
         .threat-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
@@ -91,19 +92,19 @@
         footer { padding: 80px 8%; background: #05070a; border-top: 1px solid #1e2630; text-align: center; color: #6a7783; font-size: 0.9rem; }
     </style>
 </head>
-<body id="top">
+<body>
 
 <nav>
     <div class="logo">Cyber-Risk Project</div>
     <ul>
-        <li><a href="#top">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#threats">Threats</a></li>
         <li><a href="#team">Team</a></li>
     </ul>
 </nav>
 
-<header>
+<header id="home">
     <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
     <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
@@ -130,14 +131,13 @@
 </div>
 
 <section id="game-section">
-    <div style="color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px;">INTERACTIVE</div>
+    <div style="color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px;">CHECK YOUR RISK LEVEL</div>
     <div class="game-container">
-        <h3 style="font-family: 'Orbitron'; margin-bottom: 20px;">Check Your Risk Level</h3>
         <div id="quiz-content">
-            <p id="question-text">How often do you update your privacy settings on social media?</p>
-            <button class="quiz-option" onclick="nextQuestion(3)">A. Once a month (Strong Resilience)</button>
-            <button class="quiz-option" onclick="nextQuestion(1)">B. Only when I remember (Moderate Risk)</button>
-            <button class="quiz-option" onclick="nextQuestion(0)">C. Never (High Exposure)</button>
+            <p id="question-text" style="font-size: 1.1rem; margin-bottom: 20px;">How often do you update your privacy settings on social media?</p>
+            <button class="quiz-option" onclick="nextQuestion(3)">A. Once a month</button>
+            <button class="quiz-option" onclick="nextQuestion(1)">B. Only when I remember</button>
+            <button class="quiz-option" onclick="nextQuestion(0)">C. I never check them</button>
         </div>
         <div id="result-display"></div>
     </div>
@@ -165,16 +165,35 @@
     function nextQuestion(points) {
         score += points;
         step++;
-        const qText = document.getElementById('question-text');
         const qContent = document.getElementById('quiz-content');
         
         if(step === 2) {
-            qText.innerText = "Do you use the same password for multiple accounts?";
             qContent.innerHTML = `
-                <p id="question-text">${qText.innerText}</p>
-                <button class="quiz-option" onclick="nextQuestion(0)">A. Yes, it's easier to remember (High Risk)</button>
-                <button class="quiz-option" onclick="nextQuestion(2)">B. For some, but not all (Moderate)</button>
-                <button class="quiz-option" onclick="nextQuestion(4)">C. No, I use a password manager (Cyber Pro)</button>
+                <p id="question-text" style="font-size: 1.1rem; margin-bottom: 20px;">Do you use the same password for multiple accounts?</p>
+                <button class="quiz-option" onclick="nextQuestion(0)">A. Yes, it's easier to remember</button>
+                <button class="quiz-option" onclick="nextQuestion(2)">B. For some, but not all</button>
+                <button class="quiz-option" onclick="nextQuestion(4)">C. No, I use a password manager</button>
+            `;
+        } else if(step === 3) {
+            qContent.innerHTML = `
+                <p id="question-text" style="font-size: 1.1rem; margin-bottom: 20px;">Do you enable Multi-Factor Authentication (MFA) where available?</p>
+                <button class="quiz-option" onclick="nextQuestion(4)">A. Yes, on every account possible</button>
+                <button class="quiz-option" onclick="nextQuestion(2)">B. Only for sensitive accounts like banking</button>
+                <button class="quiz-option" onclick="nextQuestion(0)">C. No, it takes too much time</button>
+            `;
+        } else if(step === 4) {
+            qContent.innerHTML = `
+                <p id="question-text" style="font-size: 1.1rem; margin-bottom: 20px;">What do you do with suspicious emails from "official" sources?</p>
+                <button class="quiz-option" onclick="nextQuestion(0)">A. Click the link to see what they want</button>
+                <button class="quiz-option" onclick="nextQuestion(1)">B. Reply to ask if it's real</button>
+                <button class="quiz-option" onclick="nextQuestion(4)">C. Mark as spam and delete immediately</button>
+            `;
+        } else if(step === 5) {
+            qContent.innerHTML = `
+                <p id="question-text" style="font-size: 1.1rem; margin-bottom: 20px;">How much personal info (location, birthday) is public on your profile?</p>
+                <button class="quiz-option" onclick="nextQuestion(0)">A. Everything is public</button>
+                <button class="quiz-option" onclick="nextQuestion(2)">B. Only visible to friends of friends</button>
+                <button class="quiz-option" onclick="nextQuestion(4)">C. Strictly limited to close friends or private</button>
             `;
         } else {
             showResult();
@@ -185,8 +204,13 @@
         const result = document.getElementById('result-display');
         document.getElementById('quiz-content').style.display = 'none';
         result.style.display = 'block';
-        let level = score > 5 ? "CYBER DEFENDER" : (score > 2 ? "MODERATE RISK" : "VULNERABLE");
-        result.innerHTML = `YOUR STATUS: ${level}<br><br><button class="quiz-option" style="text-align:center" onclick="location.reload()">Restart Quiz</button>`;
+        
+        let level = "";
+        if(score >= 15) level = "CYBER DEFENDER";
+        else if(score >= 8) level = "MODERATE PROTECTION";
+        else level = "HIGH EXPOSURE";
+
+        result.innerHTML = `STATUS: ${level}<br><br><button class="quiz-option" style="text-align:center" onclick="location.reload()">Restart Analysis</button>`;
     }
 </script>
 
