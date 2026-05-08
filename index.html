@@ -25,7 +25,6 @@
             line-height: 1.6;
         }
 
-        /* Background Grid */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +36,6 @@
             z-index: -1;
         }
 
-        /* Fixed Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -61,232 +59,59 @@
             text-transform: uppercase;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #e0e0e0;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 35px; margin: 0; }
+        nav ul li a { text-decoration: none; color: #e0e0e0; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; }
         nav ul li a:hover { color: var(--cyber-blue); }
 
-        /* Scroll Target Offsets (Fixes the header covering titles) */
-        header, .section-header, .threat-box, footer {
+        header, .section-header, .threat-box, #game-section, footer {
             scroll-margin-top: calc(var(--header-height) + 20px);
         }
 
-        /* Hero Section */
-        header {
-            text-align: center;
-            padding: 80px 10% 60px;
-        }
+        header { text-align: center; padding: 80px 10% 60px; }
+        .badge { display: inline-block; padding: 6px 18px; border: 1px solid var(--cyber-blue); border-radius: 50px; color: var(--cyber-blue); font-size: 0.7rem; font-family: 'Orbitron'; margin-bottom: 30px; background: rgba(0, 242, 255, 0.05); letter-spacing: 2px; }
+        header h1 { font-family: 'Orbitron'; font-size: 3rem; margin: 0; line-height: 1.2; text-shadow: 0 0 20px var(--cyber-blue-glow); }
+        header p { max-width: 800px; margin: 35px auto; color: #a0aab2; font-size: 1.15rem; }
 
-        .badge {
-            display: inline-block;
-            padding: 6px 18px;
-            border: 1px solid var(--cyber-blue);
-            border-radius: 50px;
-            color: var(--cyber-blue);
-            font-size: 0.7rem;
-            font-family: 'Orbitron', sans-serif;
-            margin-bottom: 30px;
-            background: rgba(0, 242, 255, 0.05);
-            letter-spacing: 2px;
-        }
-
-        header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem; 
-            margin: 0;
-            line-height: 1.2;
-            color: #fff;
-            text-shadow: 0 0 20px var(--cyber-blue-glow);
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        header p {
-            max-width: 800px;
-            margin: 35px auto;
-            color: #a0aab2;
-            font-size: 1.15rem;
-        }
-
-        /* Stats Row */
-        .stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 50px;
-            border-top: 1px solid rgba(0, 242, 255, 0.1);
-            padding-top: 40px;
-        }
-
-        .stat-item { text-align: center; }
-        .stat-value { font-size: 1.8rem; font-weight: 700; color: #fff; display: block; font-family: 'Orbitron'; }
-        .stat-label { font-size: 0.65rem; color: #6a7783; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Highlight Section */
-        .highlight-section {
-            padding: 60px 10%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .highlight-card {
-            width: 100%;
-            max-width: 1000px;
-            background: radial-gradient(circle at center, #16202b, var(--bg-dark));
-            border: 1px solid rgba(0, 242, 255, 0.2);
-            border-radius: 15px;
-            padding: 70px 40px;
-            text-align: center;
-            box-shadow: 0 0 60px rgba(0, 242, 255, 0.1);
-        }
-
-        .highlight-card h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 5.5rem;
-            color: var(--cyber-blue);
-            margin: 0;
-            text-shadow: 0 0 40px var(--cyber-blue-glow);
-        }
-
-        .highlight-card p {
-            font-size: 1.4rem;
-            color: #ffffff;
-            margin: 15px 0 5px;
-        }
-
-        .highlight-card .source {
-            color: #6a7783;
-            font-size: 0.8rem;
-            font-style: italic;
-        }
-
-        /* Framework Section */
-        .section-header { text-align: center; margin: 40px 0 60px; }
-        .sub-label { color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 10px; }
-        .main-title { font-family: 'Orbitron'; font-size: 2.2rem; margin: 0; }
-
-        .pillar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            padding: 0 8% 100px;
-        }
-
-        .pillar-card {
-            background: var(--card-bg);
-            border: 1px solid #1e2630;
-            padding: 45px 35px;
-            border-radius: 10px;
-            position: relative;
-            transition: 0.3s;
-        }
-
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 0 8% 80px; }
+        .pillar-card { background: var(--card-bg); border: 1px solid #1e2630; padding: 45px 35px; border-radius: 10px; transition: 0.3s; }
         .pillar-card:hover { border-color: var(--cyber-blue); background: #161d27; }
+        .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; color: #fff; }
 
-        .pillar-card h3 { font-family: 'Orbitron'; font-size: 1.1rem; margin-top: 0; color: #fff; }
-        .pillar-card p { color: #a0aab2; font-size: 0.95rem; margin-bottom: 10px; }
+        /* ACTIVITY SECTION */
+        #game-section { padding: 60px 10% 100px; text-align: center; }
+        .game-container { max-width: 600px; margin: 0 auto; background: #161d27; padding: 40px; border-radius: 20px; border: 1px solid var(--cyber-blue); box-shadow: 0 0 30px var(--cyber-blue-glow); }
+        .quiz-option { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #0a0e14; border: 1px solid #1e2630; color: white; border-radius: 10px; cursor: pointer; transition: 0.3s; font-family: 'Inter'; text-align: left; }
+        .quiz-option:hover { border-color: var(--cyber-blue); background: rgba(0, 242, 255, 0.05); }
+        #result-display { display: none; margin-top: 20px; font-weight: bold; color: var(--cyber-blue); font-family: 'Orbitron'; }
 
-        /* Threat Analysis Box */
-        .threat-box {
-            max-width: 900px;
-            margin: 0 auto 100px;
-            background: rgba(0, 242, 255, 0.02);
-            border: 1px dashed rgba(0, 242, 255, 0.3);
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-        }
+        .threat-box { max-width: 900px; margin: 0 auto 100px; background: rgba(0, 242, 255, 0.02); border: 1px dashed rgba(0, 242, 255, 0.3); border-radius: 15px; padding: 40px; text-align: center; }
+        .threat-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
+        .threat-item { background: var(--bg-dark); border: 1px solid var(--cyber-blue); padding: 10px 25px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; }
 
-        .threat-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .threat-item {
-            background: var(--bg-dark);
-            border: 1px solid var(--cyber-blue);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            padding: 80px 8%;
-            background: #05070a;
-            border-top: 1px solid #1e2630;
-            text-align: center;
-            color: #6a7783;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .stats-row { flex-direction: column; gap: 30px; }
-            .highlight-card h2 { font-size: 3.5rem; }
-        }
+        footer { padding: 80px 8%; background: #05070a; border-top: 1px solid #1e2630; text-align: center; color: #6a7783; font-size: 0.9rem; }
     </style>
 </head>
-<body>
+<body id="top">
 
 <nav>
     <div class="logo">Cyber-Risk Project</div>
     <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="#top">Home</a></li>
         <li><a href="#framework">Framework</a></li>
         <li><a href="#threats">Threats</a></li>
         <li><a href="#team">Team</a></li>
     </ul>
 </nav>
 
-<header id="home">
+<header>
     <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
     <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
-    
-    <div class="stats-row">
-        <div class="stat-item">
-            <span class="stat-value">3.4B+</span>
-            <span class="stat-label">Phishing Emails Daily</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-value">$4.45M</span>
-            <span class="stat-label">Avg. Breach Cost</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-value">74%</span>
-            <span class="stat-label">Involve Human Element</span>
-        </div>
-    </div>
 </header>
 
-<section class="highlight-section">
-    <div class="highlight-card">
-        <h2>68%</h2>
-        <p>of breaches involve a human element</p>
-        <div class="source">— Based on the 2024 Verizon Data Breach Investigations Report (DBIR)</div>
-    </div>
-</section>
-
-<div id="framework" class="section-header">
-    <div class="sub-label">OUR MODEL</div>
-    <h2 class="main-title">The HRMF Framework</h2>
+<div id="framework" class="section-header" style="text-align: center; margin-bottom: 50px;">
+    <div style="color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px;">OUR MODEL</div>
+    <h2 style="font-family: 'Orbitron'; font-size: 2.2rem;">The HRMF Framework</h2>
 </div>
 
 <div class="pillar-grid">
@@ -296,17 +121,30 @@
     </div>
     <div class="pillar-card">
         <h3>Behavioral Factors</h3>
-        <p>Measuring user susceptibility to phishing, password hygiene patterns, and psychological decision-making under digital threat.</p>
+        <p>Measuring user susceptibility to phishing and password hygiene patterns under digital threat.</p>
     </div>
     <div class="pillar-card">
         <h3>Social Media Exposure</h3>
-        <p>Evaluating how oversharing and privacy settings on digital platforms act as a mediating variable for cyber risk.</p>
+        <p>Evaluating how oversharing on digital platforms acts as a mediating variable for cyber risk.</p>
     </div>
 </div>
 
+<section id="game-section">
+    <div style="color: var(--cyber-blue); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 5px; margin-bottom: 20px;">INTERACTIVE</div>
+    <div class="game-container">
+        <h3 style="font-family: 'Orbitron'; margin-bottom: 20px;">Check Your Risk Level</h3>
+        <div id="quiz-content">
+            <p id="question-text">How often do you update your privacy settings on social media?</p>
+            <button class="quiz-option" onclick="nextQuestion(3)">A. Once a month (Strong Resilience)</button>
+            <button class="quiz-option" onclick="nextQuestion(1)">B. Only when I remember (Moderate Risk)</button>
+            <button class="quiz-option" onclick="nextQuestion(0)">C. Never (High Exposure)</button>
+        </div>
+        <div id="result-display"></div>
+    </div>
+</section>
+
 <div id="threats" class="threat-box">
-    <div class="sub-label">THREAT ANALYSIS</div>
-    <h2 class="main-title" style="font-size: 1.8rem; margin-top: 10px;">Primary Research Targets</h2>
+    <h2 style="font-family: 'Orbitron'; font-size: 1.8rem;">Primary Research Targets</h2>
     <div class="threat-list">
         <div class="threat-item">Phishing Attacks</div>
         <div class="threat-item">Ransomware</div>
@@ -319,6 +157,38 @@
     <p>University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat</p>
     <p>&copy; 2026 | info@cyber-risk-study.com</p>
 </footer>
+
+<script>
+    let score = 0;
+    let step = 1;
+
+    function nextQuestion(points) {
+        score += points;
+        step++;
+        const qText = document.getElementById('question-text');
+        const qContent = document.getElementById('quiz-content');
+        
+        if(step === 2) {
+            qText.innerText = "Do you use the same password for multiple accounts?";
+            qContent.innerHTML = `
+                <p id="question-text">${qText.innerText}</p>
+                <button class="quiz-option" onclick="nextQuestion(0)">A. Yes, it's easier to remember (High Risk)</button>
+                <button class="quiz-option" onclick="nextQuestion(2)">B. For some, but not all (Moderate)</button>
+                <button class="quiz-option" onclick="nextQuestion(4)">C. No, I use a password manager (Cyber Pro)</button>
+            `;
+        } else {
+            showResult();
+        }
+    }
+
+    function showResult() {
+        const result = document.getElementById('result-display');
+        document.getElementById('quiz-content').style.display = 'none';
+        result.style.display = 'block';
+        let level = score > 5 ? "CYBER DEFENDER" : (score > 2 ? "MODERATE RISK" : "VULNERABLE");
+        result.innerHTML = `YOUR STATUS: ${level}<br><br><button class="quiz-option" style="text-align:center" onclick="location.reload()">Restart Quiz</button>`;
+    }
+</script>
 
 </body>
 </html>
