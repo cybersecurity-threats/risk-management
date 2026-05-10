@@ -7,16 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Final Sophisticated Palette */
             --bg-warm-charcoal: #221F1E; 
             --grid-line: rgba(255, 255, 255, 0.03);
-            
-            /* Card Colors (Desaturated Middle Shades) */
             --sage-card: #7D9385;
             --terracotta-card: #B67352;
             --plum-card: #8A6B8A;
             --mustard-quiz: #C4A46D;
-            
             --text-black: #000000;
             --header-height: 80px;
         }
@@ -56,7 +52,7 @@
 
         .logo {
             font-family: 'Orbitron', sans-serif;
-            color: #fff; /* Keeping logo white for contrast against dark nav */
+            color: #fff;
             font-weight: 700;
             letter-spacing: 2px;
         }
@@ -69,24 +65,27 @@
         header h1 { font-family: 'Orbitron'; font-size: 2.8rem; color: #fff; margin-bottom: 20px; }
         header p { color: #aaa; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
 
-        .section-title { font-family: 'Orbitron'; text-align: center; color: #fff; margin: 40px 0; font-size: 1.5rem; letter-spacing: 3px; }
+        .section-title { font-family: 'Orbitron'; text-align: center; color: #fff; margin: 40px 0; font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
 
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 8% 80px; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 8% 60px; }
         
-        /* CARDS WITH BLACK TEXT */
-        .card { padding: 40px; border-radius: 15px; color: var(--text-black); transition: 0.3s; position: relative; }
+        .card { padding: 40px; border-radius: 15px; color: var(--text-black); transition: 0.3s; }
         .card.tech { background-color: var(--sage-card); }
         .card.beh { background-color: var(--terracotta-card); }
         .card.exp { background-color: var(--plum-card); }
         
         .card h3 { font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700; }
-        .card p { font-weight: 500; font-size: 0.95rem; }
 
         /* QUIZ SECTION */
-        #quiz-area { padding: 60px 8% 100px; }
+        #quiz-area { padding: 40px 8% 60px; }
         .quiz-container { max-width: 800px; margin: 0 auto; background: var(--mustard-quiz); padding: 40px; border-radius: 20px; color: var(--text-black); }
         .quiz-option { background: rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.2); padding: 15px; margin: 10px 0; border-radius: 10px; cursor: pointer; font-weight: 600; transition: 0.2s; }
         .quiz-option:hover { background: rgba(0,0,0,0.2); }
+
+        /* THREATS SECTION */
+        #threats-area { padding: 40px 8% 100px; text-align: center; }
+        .threat-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+        .threat-item { background: var(--sage-card); color: var(--text-black); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-family: 'Orbitron'; font-size: 0.9rem; }
 
         footer { background: #1a1817; padding: 60px 8%; text-align: center; color: #777; border-top: 1px solid #333; }
         .team { color: #999; margin-top: 10px; font-size: 0.9rem; }
@@ -99,8 +98,8 @@
     <ul>
         <li><a href="#">HOME</a></li>
         <li><a href="#framework">FRAMEWORK</a></li>
-        <li><a href="#quiz">THREATS</a></li>
-        <li><a href="#team">TEAM</a></li>
+        <li><a href="#quiz">QUIZ</a></li>
+        <li><a href="#threats">THREATS</a></li>
     </ul>
 </nav>
 
@@ -127,7 +126,7 @@
     </div>
 </div>
 
-<section id="quiz-area">
+<section id="quiz">
     <div class="quiz-container">
         <h2 style="font-family: 'Orbitron'; margin-bottom: 10px;">CHECK YOUR RISK LEVEL</h2>
         <p style="margin-bottom: 20px;">Have you enabled Multi-Factor Authentication (MFA)?</p>
@@ -135,6 +134,17 @@
         <div class="quiz-option">Yes, on sensitive accounts only</div>
         <div class="quiz-option">No, I find it too time-consuming</div>
         <div class="quiz-option">I am not sure what MFA is</div>
+    </div>
+</section>
+
+<section id="threats">
+    <div id="threats-area">
+        <div class="section-title">Primary Research Targets</div>
+        <div class="threat-list">
+            <div class="threat-item">Phishing Attacks</div>
+            <div class="threat-item">Ransomware</div>
+            <div class="threat-item">Social Engineering</div>
+        </div>
     </div>
 </section>
 
