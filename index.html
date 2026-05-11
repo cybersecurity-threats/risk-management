@@ -26,7 +26,8 @@
         nav ul li a:hover { color: var(--primary-blue); }
 
         header { background: var(--white); padding: 100px 15% 80px; text-align: center; border-bottom: 1px solid #eee; }
-        .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; }
+        /* This is the restored badge style you preferred */
+        .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         header h1 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
         header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.15rem; }
 
@@ -50,12 +51,6 @@
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
         .footer-col h4 { color: var(--text-dark); margin-bottom: 15px; font-size: 1rem; }
         .footer-col p { color: var(--text-muted); line-height: 1.8; margin-bottom: 4px; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-col:last-child { text-align: center; }
-        }
     </style>
 </head>
 <body>
@@ -70,7 +65,7 @@
 </nav>
 
 <header id="about">
-    <div class="badge">UNIVERSITY OF BAHRAIN | COLLEGE OF IT</div>
+    <div class="badge">UNIVERSITY OF BAHRAIN | ITIS 499 SENIOR PROJECT</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
     <p>We propose the <strong>Holistic Risk Management Framework (HRMF)</strong> to study the critical mediation role of social media exposure in individual cybersecurity resilience and behavior.</p>
 </header>
@@ -101,7 +96,7 @@
         </div>
         <div class="card">
             <h3>Behavioral Factors</h3>
-            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to password hygiene failures and phishing susceptibility.</p>
+            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to password hygiene failures.</p>
         </div>
         <div class="card">
             <h3>Social Media Exposure</h3>
@@ -115,7 +110,7 @@
     <div class="grid">
         <div class="card">
             <h3>Significant Mediation</h3>
-            <p>The research confirms that social media exposure is a primary mediator, meaning high usage and sharing directly lower an individual's adherence to security protocols.</p>
+            <p>The research confirms that social media exposure is a primary mediator; high usage and sharing levels directly influence an individual's security adherence.</p>
         </div>
         <div class="card">
             <h3>The Perception Gap</h3>
@@ -140,7 +135,7 @@
             <h4>Academic Context</h4>
             <p>Supervisor: Dr. Ali Zoliat</p>
             <p>Department of Information Systems</p>
-            <p>ITIS 499 Senior Project | 2025-2026</p>
+            <p>College of Information Technology</p>
         </div>
     </div>
 </footer>
