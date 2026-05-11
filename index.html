@@ -3,155 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Threats and Risk Management - Senior Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Cybersecurity Threats and Risk Management in real-world and social media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-warm-charcoal: #221F1E; 
-            --grid-line: rgba(255, 255, 255, 0.03);
-            --sage-card: #7D9385;
-            --terracotta-card: #B67352;
-            --plum-card: #8A6B8A;
-            --mustard-quiz: #C4A46D;
-            --text-black: #000000;
-            --header-height: 80px;
+            --primary-blue: #0056b3;
+            --accent-blue: #e7f1ff;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-warm-charcoal);
-            color: var(--text-black);
-            line-height: 1.6;
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 10%; height: 70px; background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-weight: 700; color: var(--primary-blue); font-size: 1.1rem; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        nav ul li a:hover { color: var(--primary-blue); }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-        }
+        header { background: var(--white); padding: 80px 15% 60px; text-align: center; border-bottom: 1px solid #eee; }
+        .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; }
+        header h1 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
+        header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.1rem; }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 8%;
-            height: var(--header-height);
-            background: rgba(34, 31, 30, 0.98);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .section-container { padding: 60px 10%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 1.8rem; font-weight: 700; color: var(--text-dark); position: relative; padding-bottom: 15px; }
+        .section-title h2::after { content: ''; width: 50px; height: 3px; background: var(--primary-blue); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid #f0f0f0; transition: transform 0.3s ease; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .card p { font-size: 0.95rem; color: var(--text-muted); }
 
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: #ccc; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        #stats { background: var(--primary-blue); color: var(--white); text-align: center; padding: 40px 10%; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .stat-item h2 { font-size: 2.5rem; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.9rem; opacity: 0.9; }
 
-        header { text-align: center; padding: 100px 10% 60px; }
-        .badge { display: inline-block; padding: 5px 15px; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.7rem; font-family: 'Orbitron'; margin-bottom: 20px; }
-        header h1 { font-family: 'Orbitron'; font-size: 2.8rem; color: #fff; margin-bottom: 20px; }
-        header p { color: #aaa; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
-
-        .section-title { font-family: 'Orbitron'; text-align: center; color: #fff; margin: 40px 0; font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
-
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 8% 60px; }
-        
-        .card { padding: 40px; border-radius: 15px; color: var(--text-black); transition: 0.3s; }
-        .card.tech { background-color: var(--sage-card); }
-        .card.beh { background-color: var(--terracotta-card); }
-        .card.exp { background-color: var(--plum-card); }
-        
-        .card h3 { font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700; }
-
-        /* QUIZ SECTION */
-        #quiz-area { padding: 40px 8% 60px; }
-        .quiz-container { max-width: 800px; margin: 0 auto; background: var(--mustard-quiz); padding: 40px; border-radius: 20px; color: var(--text-black); }
-        .quiz-option { background: rgba(0,0,0,0.1); border: 1px solid rgba(0,0,0,0.2); padding: 15px; margin: 10px 0; border-radius: 10px; cursor: pointer; font-weight: 600; transition: 0.2s; }
-        .quiz-option:hover { background: rgba(0,0,0,0.2); }
-
-        /* THREATS SECTION */
-        #threats-area { padding: 40px 8% 100px; text-align: center; }
-        .threat-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-        .threat-item { background: var(--sage-card); color: var(--text-black); padding: 12px 30px; border-radius: 50px; font-weight: 700; font-family: 'Orbitron'; font-size: 0.9rem; }
-
-        footer { background: #1a1817; padding: 60px 8%; text-align: center; color: #777; border-top: 1px solid #333; }
-        .team { color: #999; margin-top: 10px; font-size: 0.9rem; }
+        footer { background: #fdfdfd; padding: 40px 10%; border-top: 1px solid #eee; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        .footer-col h4 { color: var(--text-dark); margin-bottom: 10px; }
+        .footer-col p { color: var(--text-muted); line-height: 1.8; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">CYBER-RISK PROJECT</div>
+    <div class="logo">UOB HRMF RESEARCH</div>
     <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#framework">FRAMEWORK</a></li>
-        <li><a href="#quiz">QUIZ</a></li>
-        <li><a href="#threats">THREATS</a></li>
+        <li><a href="#about">Problem</a></li>
+        <li><a href="#framework">The HRMF</a></li>
+        <li><a href="#results">Key Results</a></li>
     </ul>
 </nav>
 
-<header>
-    <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
+<header id="about">
+    <div class="badge">UNIVERSITY OF BAHRAIN | ITIS 499 SENIOR PROJECT</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
-    <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
+    <p>Examining the <strong>Holistic Risk Management Framework (HRMF)</strong> to understand how social media exposure acts as a critical mediator in an individual's digital resilience.</p>
 </header>
 
-<div id="framework" class="section-title">THE HRMF FRAMEWORK</div>
-
-<div class="grid-container">
-    <div class="card tech">
-        <h3>TECHNICAL FACTORS</h3>
-        <p>Analyzing defensive capabilities through Multi-Factor Authentication (MFA), AI-driven detection, and system updates.</p>
-    </div>
-    <div class="card beh">
-        <h3>BEHAVIORAL FACTORS</h3>
-        <p>Measuring user susceptibility to phishing, password hygiene patterns, and decision-making under threat.</p>
-    </div>
-    <div class="card exp">
-        <h3>SOCIAL MEDIA EXPOSURE</h3>
-        <p>Evaluating how oversharing on digital platforms acts as a mediating variable for individual and organizational risk.</p>
-    </div>
-</div>
-
-<section id="quiz">
-    <div class="quiz-container">
-        <h2 style="font-family: 'Orbitron'; margin-bottom: 10px;">CHECK YOUR RISK LEVEL</h2>
-        <p style="margin-bottom: 20px;">Have you enabled Multi-Factor Authentication (MFA)?</p>
-        <div class="quiz-option">Yes, on all accounts</div>
-        <div class="quiz-option">Yes, on sensitive accounts only</div>
-        <div class="quiz-option">No, I find it too time-consuming</div>
-        <div class="quiz-option">I am not sure what MFA is</div>
-    </div>
-</section>
-
-<section id="threats">
-    <div id="threats-area">
-        <div class="section-title">Primary Research Targets</div>
-        <div class="threat-list">
-            <div class="threat-item">Phishing Attacks</div>
-            <div class="threat-item">Ransomware</div>
-            <div class="threat-item">Social Engineering</div>
+<section id="stats">
+    <div class="stat-grid">
+        <div class="stat-item">
+            <h2>68%</h2>
+            <p>of all cyberattacks are related to the "Human Factor"</p>
+        </div>
+        <div class="stat-item">
+            <h2>208</h2>
+            <p>Participants in our Bahrain-based survey</p>
+        </div>
+        <div class="stat-item">
+            <h2>32%</h2>
+            <p>Increase in Identity-based attacks in 2025</p>
         </div>
     </div>
 </section>
 
-<footer id="team">
-    <p><strong>Research Team:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan</p>
-    <p class="team">University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat</p>
-    <p style="margin-top:20px; font-size: 0.7rem;">&copy; 2026 | info@cyber-risk-study.com</p>
+<section id="framework" class="section-container">
+    <div class="section-title"><h2>Holistic Risk Management Framework</h2></div>
+    <div class="grid">
+        <div class="card">
+            <h3>Technical Factors</h3>
+            <p>Focuses on automated safeguards like Multi-Factor Authentication (MFA) and AI-driven detection systems which contribute strongly to resilience[cite: 258].</p>
+        </div>
+        <div class="card">
+            <h3>Behavioral Factors</h3>
+            <p>Analyzes psychological triggers like digital impulsivity and "human firewalls," which represent a persistent vulnerability[cite: 151, 498].</p>
+        </div>
+        <div class="card">
+            <h3>Social Media Exposure</h3>
+            <p>Functions as a "risk bridge" where oversharing and peer influence significantly mediate an individual's total cybersecurity risk[cite: 262, 373].</p>
+        </div>
+    </div>
+</section>
+
+<section id="results" class="section-container" style="background: var(--white);">
+    <div class="section-title"><h2>Significant Findings</h2></div>
+    <div class="grid">
+        <div class="card">
+            <h3>The Mediation Effect</h3>
+            <p>Our findings confirm that the link between usage patterns and overall risk is heavily influenced by social media exposure[cite: 373].</p>
+        </div>
+        <div class="card">
+            <h3>Perception-Action Gap</h3>
+            <p>Research reveals that even when users perceive a threat, they often struggle to follow correct security procedures[cite: 375].</p>
+        </div>
+        <div class="card">
+            <h3>Youth Susceptibility</h3>
+            <p>Data indicates that young users and frequent social media participants have a higher likelihood of engaging in risky interactions[cite: 271].</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Prepared By</h4>
+            <p>Sara Mohammed Abdulla (202110222)<br>
+               Khadija Abdulla Mohamed (202102946)<br>
+               Lujain Hussain Alashwan (202011273)</p>
+        </div>
+        <div class="footer-col" style="text-align: right;">
+            <h4>Supervision</h4>
+            <p>Supervisor: Dr. Ali Zoliat<br>
+               College of Information Technology<br>
+               Department of Information Systems</p>
+        </div>
+    </div>
 </footer>
 
 </body>
