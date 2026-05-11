@@ -20,104 +20,110 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
         nav { display: flex; justify-content: space-between; align-items: center; padding: 0 10%; height: 70px; background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 700; color: var(--primary-blue); font-size: 1.1rem; }
+        .logo { font-weight: 700; color: var(--primary-blue); font-size: 1.1rem; text-transform: uppercase; }
         nav ul { display: flex; list-style: none; gap: 25px; }
         nav ul li a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
         nav ul li a:hover { color: var(--primary-blue); }
 
-        header { background: var(--white); padding: 80px 15% 60px; text-align: center; border-bottom: 1px solid #eee; }
+        header { background: var(--white); padding: 100px 15% 80px; text-align: center; border-bottom: 1px solid #eee; }
         .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.3; }
-        header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.1rem; }
+        header h1 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
+        header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.15rem; }
 
-        .section-container { padding: 60px 10%; }
-        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-container { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 1.8rem; font-weight: 700; color: var(--text-dark); position: relative; padding-bottom: 15px; }
-        .section-title h2::after { content: ''; width: 50px; height: 3px; background: var(--primary-blue); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--primary-blue); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid #f0f0f0; transition: transform 0.3s ease; }
+        .card { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid #f0f0f0; transition: transform 0.3s ease; }
         .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--primary-blue); margin-bottom: 12px; font-size: 1.2rem; }
+        .card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.25rem; font-weight: 600; }
         .card p { font-size: 0.95rem; color: var(--text-muted); }
 
-        #stats { background: var(--primary-blue); color: var(--white); text-align: center; padding: 40px 10%; }
-        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .stat-item h2 { font-size: 2.5rem; margin-bottom: 5px; }
-        .stat-item p { font-size: 0.9rem; opacity: 0.9; }
+        #stats { background: var(--primary-blue); color: var(--white); text-align: center; padding: 50px 10%; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .stat-item h2 { font-size: 2.8rem; margin-bottom: 5px; font-weight: 700; }
+        .stat-item p { font-size: 0.95rem; opacity: 0.9; font-weight: 400; }
 
-        footer { background: #fdfdfd; padding: 40px 10%; border-top: 1px solid #eee; font-size: 0.9rem; }
+        footer { background: #ffffff; padding: 50px 10%; border-top: 1px solid #eee; font-size: 0.9rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-        .footer-col h4 { color: var(--text-dark); margin-bottom: 10px; }
-        .footer-col p { color: var(--text-muted); line-height: 1.8; }
+        .footer-col h4 { color: var(--text-dark); margin-bottom: 15px; font-size: 1rem; }
+        .footer-col p { color: var(--text-muted); line-height: 1.8; margin-bottom: 4px; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-col:last-child { text-align: center; }
+        }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">UOB HRMF RESEARCH</div>
+    <div class="logo">Senior Research Project</div>
     <ul>
-        <li><a href="#about">Problem</a></li>
-        <li><a href="#framework">The HRMF</a></li>
-        <li><a href="#results">Key Results</a></li>
+        <li><a href="#about">Abstract</a></li>
+        <li><a href="#framework">Proposed HRMF</a></li>
+        <li><a href="#results">Research Findings</a></li>
     </ul>
 </nav>
 
 <header id="about">
-    <div class="badge">UNIVERSITY OF BAHRAIN | ITIS 499 SENIOR PROJECT</div>
+    <div class="badge">UNIVERSITY OF BAHRAIN | COLLEGE OF IT</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
-    <p>Examining the <strong>Holistic Risk Management Framework (HRMF)</strong> to understand how social media exposure acts as a critical mediator in an individual's digital resilience.</p>
+    <p>We propose the <strong>Holistic Risk Management Framework (HRMF)</strong> to study the critical mediation role of social media exposure in individual cybersecurity resilience and behavior.</p>
 </header>
 
 <section id="stats">
     <div class="stat-grid">
         <div class="stat-item">
             <h2>68%</h2>
-            <p>of all cyberattacks are related to the "Human Factor"</p>
+            <p>Threats linked to the Human Factor</p>
         </div>
         <div class="stat-item">
             <h2>208</h2>
-            <p>Participants in our Bahrain-based survey</p>
+            <p>Total Survey Participants</p>
         </div>
         <div class="stat-item">
-            <h2>32%</h2>
-            <p>Increase in Identity-based attacks in 2025</p>
+            <h2>HRMF</h2>
+            <p>Our Proposed Framework</p>
         </div>
     </div>
 </section>
 
 <section id="framework" class="section-container">
-    <div class="section-title"><h2>Holistic Risk Management Framework</h2></div>
+    <div class="section-title"><h2>The Proposed HRMF</h2></div>
     <div class="grid">
         <div class="card">
             <h3>Technical Factors</h3>
-            <p>Focuses on automated safeguards like Multi-Factor Authentication (MFA) and AI-driven detection systems which contribute strongly to resilience[cite: 258].</p>
+            <p>Analyzing the effectiveness of automated defense mechanisms like Multi-Factor Authentication (MFA) and AI-driven detection systems in mitigating external threats.</p>
         </div>
         <div class="card">
             <h3>Behavioral Factors</h3>
-            <p>Analyzes psychological triggers like digital impulsivity and "human firewalls," which represent a persistent vulnerability[cite: 151, 498].</p>
+            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to password hygiene failures and phishing susceptibility.</p>
         </div>
         <div class="card">
             <h3>Social Media Exposure</h3>
-            <p>Functions as a "risk bridge" where oversharing and peer influence significantly mediate an individual's total cybersecurity risk[cite: 262, 373].</p>
+            <p>Defining the "Risk Bridge" where oversharing and online interaction patterns significantly mediate the link between user habits and total digital risk.</p>
         </div>
     </div>
 </section>
 
 <section id="results" class="section-container" style="background: var(--white);">
-    <div class="section-title"><h2>Significant Findings</h2></div>
+    <div class="section-title"><h2>Key Research Findings</h2></div>
     <div class="grid">
         <div class="card">
-            <h3>The Mediation Effect</h3>
-            <p>Our findings confirm that the link between usage patterns and overall risk is heavily influenced by social media exposure[cite: 373].</p>
+            <h3>Significant Mediation</h3>
+            <p>The research confirms that social media exposure is a primary mediator, meaning high usage and sharing directly lower an individual's adherence to security protocols.</p>
         </div>
         <div class="card">
-            <h3>Perception-Action Gap</h3>
-            <p>Research reveals that even when users perceive a threat, they often struggle to follow correct security procedures[cite: 375].</p>
+            <h3>The Perception Gap</h3>
+            <p>Our study reveals a disconnect where individuals perceive high threat levels but remain unable or unwilling to change their behavior to meet security standards.</p>
         </div>
         <div class="card">
-            <h3>Youth Susceptibility</h3>
-            <p>Data indicates that young users and frequent social media participants have a higher likelihood of engaging in risky interactions[cite: 271].</p>
+            <h3>Holistic Resilience</h3>
+            <p>The data suggests that technical protection alone is insufficient; true resilience requires addressing behavioral exposure and social media habits simultaneously.</p>
         </div>
     </div>
 </section>
@@ -125,16 +131,16 @@
 <footer>
     <div class="footer-grid">
         <div class="footer-col">
-            <h4>Prepared By</h4>
-            <p>Sara Mohammed Abdulla (202110222)<br>
-               Khadija Abdulla Mohamed (202102946)<br>
-               Lujain Hussain Alashwan (202011273)</p>
+            <h4>Research Team</h4>
+            <p><strong>Sara Mohammed Abdulla</strong> (202110222)</p>
+            <p><strong>Khadija Abdulla Mohamed</strong> (202102946)</p>
+            <p><strong>Lujain Hussain Alashwan</strong> (202011273)</p>
         </div>
         <div class="footer-col" style="text-align: right;">
-            <h4>Supervision</h4>
-            <p>Supervisor: Dr. Ali Zoliat<br>
-               College of Information Technology<br>
-               Department of Information Systems</p>
+            <h4>Academic Context</h4>
+            <p>Supervisor: Dr. Ali Zoliat</p>
+            <p>Department of Information Systems</p>
+            <p>ITIS 499 Senior Project | 2025-2026</p>
         </div>
     </div>
 </footer>
