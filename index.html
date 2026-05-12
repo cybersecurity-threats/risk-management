@@ -26,7 +26,6 @@
         nav ul li a:hover { color: var(--primary-blue); }
 
         header { background: var(--white); padding: 100px 15% 80px; text-align: center; border-bottom: 1px solid #eee; }
-        /* This is the restored badge style you preferred */
         .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         header h1 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
         header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.15rem; }
@@ -41,6 +40,23 @@
         .card:hover { transform: translateY(-5px); }
         .card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.25rem; font-weight: 600; }
         .card p { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* --- NEW FRAMEWORK STYLES --- */
+        .diagram-wrapper { background: var(--white); padding: 40px; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid #eee; margin-bottom: 50px; text-align: center; overflow-x: auto; }
+        .diagram-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        
+        /* HRMF Visual Concept */
+        .hrmf-viz { display: flex; align-items: center; justify-content: center; gap: 40px; min-width: 600px; padding: 20px; }
+        .box { padding: 20px; border: 2px solid var(--primary-blue); border-radius: 8px; font-weight: 700; font-size: 0.9rem; background: var(--white); color: var(--primary-blue); min-width: 150px; }
+        .box.mediator { background: var(--primary-blue); color: var(--white); border: none; }
+        .arrow { font-size: 1.5rem; color: var(--primary-blue); font-weight: bold; }
+
+        /* Convergence Circles */
+        .convergence-viz { position: relative; width: 300px; height: 200px; margin: 0 auto; }
+        .circle { position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--primary-blue); background: rgba(0, 86, 179, 0.1); display: flex; align-items: center; justify-content: center; padding: 20px; font-weight: 600; font-size: 0.85rem; }
+        .circle.left { left: 0; }
+        .circle.right { right: 0; background: rgba(231, 241, 255, 0.6); }
+        .risk-zone { position: absolute; top: 75px; left: 110px; z-index: 10; font-weight: 800; color: var(--primary-blue); text-shadow: 0 0 5px white; }
 
         #stats { background: var(--primary-blue); color: var(--white); text-align: center; padding: 50px 10%; }
         .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
@@ -89,19 +105,45 @@
 
 <section id="framework" class="section-container">
     <div class="section-title"><h2>The Proposed HRMF</h2></div>
-    <div class="grid">
+    
+    <div class="grid" style="margin-bottom: 60px;">
         <div class="card">
             <h3>Technical Factors</h3>
-            <p>Analyzing the effectiveness of automated defense mechanisms like Multi-Factor Authentication (MFA) and AI-driven detection systems in mitigating external threats.</p>
+            <p>Analyzing the effectiveness of automated defense mechanisms like MFA and AI-driven detection systems in mitigating external threats.</p>
         </div>
         <div class="card">
             <h3>Behavioral Factors</h3>
-            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to password hygiene failures.</p>
+            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to security failures.</p>
         </div>
         <div class="card">
             <h3>Social Media Exposure</h3>
-            <p>Defining the "Risk Bridge" where oversharing and online interaction patterns significantly mediate the link between user habits and total digital risk.</p>
+            <p>Defining the "Risk Bridge" where oversharing significantly mediates the link between user habits and total digital risk.</p>
         </div>
+    </div>
+
+    <div class="section-title"><h3>Visualizing the Models</h3></div>
+    
+    <div class="diagram-wrapper">
+        <div class="hrmf-viz">
+            <div class="box-group">
+                <div class="box" style="margin-bottom: 20px;">Technical Factors</div>
+                <div class="box">Behavioral Factors</div>
+            </div>
+            <div class="arrow">→</div>
+            <div class="box mediator">Social Media Exposure<br><small>(The Mediator)</small></div>
+            <div class="arrow">→</div>
+            <div class="box" style="border-style: dashed;">Digital Resilience</div>
+        </div>
+        <p class="diagram-label">Figure 2: Proposed Holistic Risk Management Framework (HRMF)</p>
+    </div>
+
+    <div class="diagram-wrapper">
+        <div class="convergence-viz">
+            <div class="circle left">Technical<br>Exploits</div>
+            <div class="circle right">Social Media<br>Exposure</div>
+            <div class="risk-zone">HIGH RISK<br>ZONE</div>
+        </div>
+        <p class="diagram-label">Figure 1: The Convergence of Exposure and Technical Exploits</p>
     </div>
 </section>
 
@@ -110,35 +152,8 @@
     <div class="grid">
         <div class="card">
             <h3>Significant Mediation</h3>
-            <p>The research confirms that social media exposure is a primary mediator; high usage and sharing levels directly influence an individual's security adherence.</p>
+            <p>The research confirms that social media exposure is a primary mediator; high sharing levels directly influence an individual's security adherence.</p>
         </div>
         <div class="card">
             <h3>The Perception Gap</h3>
-            <p>Our study reveals a disconnect where individuals perceive high threat levels but remain unable or unwilling to change their behavior to meet security standards.</p>
-        </div>
-        <div class="card">
-            <h3>Holistic Resilience</h3>
-            <p>The data suggests that technical protection alone is insufficient; true resilience requires addressing behavioral exposure and social media habits simultaneously.</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-grid">
-        <div class="footer-col">
-            <h4>Research Team</h4>
-            <p><strong>Sara Mohammed Abdulla</strong> (202110222)</p>
-            <p><strong>Khadija Abdulla Mohamed</strong> (202102946)</p>
-            <p><strong>Lujain Hussain Alashwan</strong> (202011273)</p>
-        </div>
-        <div class="footer-col" style="text-align: right;">
-            <h4>Academic Context</h4>
-            <p>Supervisor: Dr. Ali Zoliat</p>
-            <p>Department of Information Systems</p>
-            <p>College of Information Technology</p>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+            <p>Our study reveals a disconnect where individuals perceive high threat levels but remain
