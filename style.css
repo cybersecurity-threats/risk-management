@@ -1,15 +1,20 @@
 :root {
-    --bg-warm-charcoal: #221F1E; 
-    --grid-line: rgba(255, 255, 255, 0.03);
+    /* UOB Corporate Light Aesthetic */
+    --bg-main: #F8F9FA; 
+    --bg-card-container: #FFFFFF;
+    --border-light: #E2E8F0;
+    --text-dark: #1A202C;
+    --text-muted: #4A5568;
     
-    /* Card Colors (Desaturated Middle Shades) */
+    /* Your Loved Variable Colors (Polished Middle Shades) */
     --sage-card: #7D9385;
     --terracotta-card: #B67352;
     --plum-card: #8A6B8A;
     --mustard-quiz: #C4A46D;
     
     --text-black: #000000;
-    --header-height: 80px;
+    --header-height: 70px;
+    --uob-blue: #0A2540; /* Professional Academic Dark Blue */
 }
 
 * { 
@@ -21,41 +26,32 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-warm-charcoal);
-    color: var(--text-black);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
     line-height: 1.6;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: 
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -1;
-}
-
-/* NAVIGATION HEADER */
+/* CLEAN INSTITUTIONAL NAVIGATION */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 10%;
     height: var(--header-height);
-    background: rgba(34, 31, 30, 0.98);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: #FFFFFF;
+    border-bottom: 2px solid var(--border-light);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .logo {
     font-family: 'Orbitron', sans-serif;
-    color: #fff;
+    color: var(--uob-blue);
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
 }
 
 nav ul { 
@@ -66,71 +62,83 @@ nav ul {
 
 nav ul li a { 
     text-decoration: none; 
-    color: #ccc; 
-    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    font-size: 0.85rem; 
     font-weight: 600; 
     text-transform: uppercase; 
+    transition: color 0.2s;
 }
 
-/* HERO SECTION */
+nav ul li a:hover {
+    color: var(--uob-blue);
+}
+
+/* CLEAN HERO HEADER SECTION */
 header { 
     text-align: center; 
-    padding: 100px 10% 40px; 
+    padding: 80px 12% 60px;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .badge { 
     display: inline-block; 
-    padding: 5px 15px; 
-    border: 1px solid #fff; 
-    border-radius: 20px; 
-    color: #fff; 
-    font-size: 0.7rem; 
+    padding: 6px 16px; 
+    background-color: rgba(10, 37, 64, 0.08);
+    border-radius: 4px; 
+    color: var(--uob-blue); 
+    font-size: 0.75rem; 
     font-family: 'Orbitron'; 
     margin-bottom: 20px; 
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 header h1 { 
     font-family: 'Orbitron'; 
-    font-size: 2.8rem; 
-    color: #fff; 
+    font-size: 2.5rem; 
+    color: var(--uob-blue); 
     margin-bottom: 20px; 
+    line-height: 1.3;
 }
 
 header p { 
-    color: #aaa; 
-    max-width: 700px; 
+    color: var(--text-muted); 
+    max-width: 750px; 
     margin: 0 auto; 
     font-size: 1.1rem; 
 }
 
+/* SECTION TITLES */
 .section-title { 
     font-family: 'Orbitron'; 
     text-align: center; 
-    color: #fff; 
-    margin: 40px 0 10px; 
-    font-size: 1.5rem; 
-    letter-spacing: 3px; 
+    color: var(--uob-blue); 
+    margin: 60px 0 10px; 
+    font-size: 1.6rem; 
+    letter-spacing: 2px; 
     text-transform: uppercase; 
+    font-weight: 700;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #888;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 40px;
 }
 
-/* ADVANCED MODEL MAP LAYOUT WITH STRUCTURAL ARROWS */
+/* STRUCTURAL RESEARCH MODEL GRID */
 .framework-map-container {
     max-width: 1200px;
     margin: 0 auto 60px;
-    padding: 20px 4%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    padding: 30px;
+    background: var(--bg-card-container);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-/* Column Labels Track */
 .variable-headers {
     display: grid;
     grid-template-columns: 1fr 120px 1fr 120px 1fr;
@@ -138,12 +146,11 @@ header p {
     font-family: 'Orbitron', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 1px;
-    color: #aaa;
+    color: var(--text-muted);
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-/* Core Structural Grid */
 .map-grid {
     display: grid;
     grid-template-columns: 1fr 120px 1fr 120px 1fr;
@@ -151,12 +158,12 @@ header p {
     position: relative;
 }
 
-/* Framework Model Variables Styles */
+/* Framework Cards with solid black text */
 .map-card {
     padding: 25px 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     color: var(--text-black);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     min-height: 190px;
     display: flex;
     flex-direction: column;
@@ -167,8 +174,9 @@ header p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.05rem;
     margin-bottom: 12px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     padding-bottom: 6px;
+    font-weight: 700;
 }
 
 .map-card ul {
@@ -187,16 +195,16 @@ header p {
     content: "•";
     position: absolute;
     left: 0;
-    color: rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.4);
 }
 
-/* Specific Block Allocations */
+/* Allocation & Variable Tones */
 .card-behavioral { background-color: var(--terracotta-card); grid-column: 1; grid-row: 1; margin-bottom: 30px; }
 .card-technical { background-color: var(--sage-card); grid-column: 1; grid-row: 3; margin-top: 30px; }
 .card-mediator { background-color: var(--plum-card); grid-column: 3; grid-row: 2; }
-.card-dependent { background-color: #E2E2E2; grid-column: 5; grid-row: 2; border: 2px solid #fff; }
+.card-dependent { background-color: #EBF4FF; grid-column: 5; grid-row: 2; border: 2px solid #BEE3F8; }
 
-/* Structural Vector Paths (The Connector Lines) */
+/* Path Vector Arrows (Optimized for Dark Lines on Light BG) */
 .vector-path {
     display: flex;
     align-items: center;
@@ -205,94 +213,55 @@ header p {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 0.85rem;
-    color: #fff;
+    color: var(--uob-blue);
 }
 
-/* H1 Cross-Diagonal Path (Behavioral down to Media) */
 .path-h1 {
     grid-column: 2; grid-row: 1 / span 2;
     height: 100%;
-    background: linear-gradient(to bottom right, transparent 49%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 52%, transparent 53%);
+    background: linear-gradient(to bottom right, transparent 48%, #CBD5E0 49%, #CBD5E0 51%, transparent 52%);
 }
-.label-h1 { position: absolute; top: 40%; left: 30%; }
+.label-h1 { position: absolute; top: 40%; left: 35%; background: var(--bg-card-container); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-light); }
 
-/* H2 Cross-Diagonal Path (Technical up to Media) */
 .path-h2 {
     grid-column: 2; grid-row: 2 / span 2;
     height: 100%;
-    background: linear-gradient(to top right, transparent 49%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 52%, transparent 53%);
+    background: linear-gradient(to top right, transparent 48%, #CBD5E0 49%, #CBD5E0 51%, transparent 52%);
 }
-.label-h2 { position: absolute; bottom: 40%; left: 30%; }
+.label-h2 { position: absolute; bottom: 40%; left: 35%; background: var(--bg-card-container); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-light); }
 
-/* H3 Straight Path (Media to Resilience) */
 .path-h3 {
     grid-column: 4; grid-row: 2;
     height: 2px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: #CBD5E0;
 }
 .path-h3::after {
     content: "►";
     position: absolute;
-    right: -4px;
-    color: rgba(255,255,255,0.3);
+    right: -4px; top: -5px;
+    color: #CBD5E0;
     font-size: 0.6rem;
 }
-.label-h3 { margin-bottom: 20px; }
+.label-h3 { margin-bottom: 25px; background: var(--bg-card-container); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-light); }
 
-/* H4 Long Horizontal Path (Behavioral bypassing straight to Resilience) */
+/* Bypassing Paths */
 .path-h4-container {
-    grid-column: 2 / span 3;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    position: relative;
-    padding-top: 40px;
+    grid-column: 2 / span 3; grid-row: 1;
+    display: flex; flex-direction: column; justify-content: center; height: 100%; position: relative; padding-top: 40px;
 }
-.line-h4 {
-    height: 2px;
-    background-color: rgba(255,255,255,0.15);
-    width: 100%;
-    position: relative;
-}
-.line-h4::after {
-    content: "►";
-    position: absolute;
-    right: -4px; top: -5px;
-    color: rgba(255,255,255,0.15);
-    font-size: 0.6rem;
-}
-.label-h4 { text-align: center; margin-bottom: 6px; }
+.line-h4 { height: 2px; background-color: #E2E8F0; width: 100%; position: relative; }
+.line-h4::after { content: "►"; position: absolute; right: -4px; top: -5px; color: #CBD5E0; font-size: 0.6rem; }
+.label-h4 { text-align: center; margin-bottom: 6px; font-size: 0.8rem; color: var(--text-muted); }
 
-/* H5 Long Horizontal Path (Technical bypassing straight to Resilience) */
 .path-h5-container {
-    grid-column: 2 / span 3;
-    grid-row: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    position: relative;
-    padding-bottom: 40px;
+    grid-column: 2 / span 3; grid-row: 3;
+    display: flex; flex-direction: column; justify-content: center; height: 100%; position: relative; padding-bottom: 40px;
 }
-.line-h5 {
-    height: 2px;
-    background-color: rgba(255,255,255,0.15);
-    width: 100%;
-    position: relative;
-}
-.line-h5::after {
-    content: "►";
-    position: absolute;
-    right: -4px; top: -5px;
-    color: rgba(255,255,255,0.15);
-    font-size: 0.6rem;
-}
-.label-h5 { text-align: center; margin-top: 6px; }
+.line-h5 { height: 2px; background-color: #E2E8F0; width: 100%; position: relative; }
+.line-h5::after { content: "►"; position: absolute; right: -4px; top: -5px; color: #CBD5E0; font-size: 0.6rem; }
+.label-h5 { text-align: center; margin-top: 6px; font-size: 0.8rem; color: var(--text-muted); }
 
-
-/* QUIZ AREA */
+/* CRISP QUIZ BOX */
 #quiz { 
     padding: 40px 8% 60px; 
 }
@@ -302,37 +271,32 @@ header p {
     margin: 0 auto; 
     background: var(--mustard-quiz); 
     padding: 40px; 
-    border-radius: 20px; 
+    border-radius: 8px; 
     color: var(--text-black); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.quiz-container h2 {
-    font-family: 'Orbitron'; 
-    margin-bottom: 10px;
-}
-
-.quiz-container p {
-    margin-bottom: 20px;
-}
+.quiz-container h2 { font-family: 'Orbitron'; margin-bottom: 10px; font-weight: 700; }
+.quiz-container p { margin-bottom: 20px; font-weight: 500; }
 
 .quiz-option { 
-    background: rgba(0,0,0,0.1); 
-    border: 1px solid rgba(0,0,0,0.2); 
+    background: rgba(255,255,255,0.4); 
+    border: 1px solid rgba(0,0,0,0.15); 
     padding: 15px; 
     margin: 10px 0; 
-    border-radius: 10px; 
+    border-radius: 6px; 
     cursor: pointer; 
     font-weight: 600; 
     transition: 0.2s; 
 }
 
 .quiz-option:hover { 
-    background: rgba(0,0,0,0.2); 
+    background: rgba(255,255,255,0.6); 
 }
 
-/* THREATS AREA */
+/* RESEARCH TARGET THREATS */
 #threats-area { 
-    padding: 40px 8% 100px; 
+    padding: 40px 8% 80px; 
     text-align: center; 
 }
 
@@ -345,31 +309,37 @@ header p {
 }
 
 .threat-item { 
-    background: var(--sage-card); 
-    color: var(--text-black); 
+    background: #FFFFFF; 
+    color: var(--uob-blue); 
     padding: 12px 30px; 
-    border-radius: 50px; 
+    border-radius: 4px; 
     font-weight: 700; 
     font-family: 'Orbitron'; 
     font-size: 0.9rem; 
+    border: 1px solid var(--border-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-/* FOOTER */
+/* ACADEMIC FOOTER */
 footer { 
-    background: #1a1817; 
+    background: var(--uob-blue); 
     padding: 60px 8%; 
     text-align: center; 
-    color: #777; 
-    border-top: 1px solid #333; 
+    color: #A0AEC0; 
+    border-top: 4px solid #CBD5E0; 
+}
+
+footer p strong {
+    color: #FFFFFF;
 }
 
 .team { 
-    color: #999; 
+    color: #CBD5E0; 
     margin-top: 10px; 
-    font-size: 0.9rem; 
+    font-size: 0.95rem; 
 }
 
-/* Responsiveness adjustments for tracking framework viewports */
+/* Responsive tracks */
 @media (max-width: 900px) {
     .variable-headers { display: none; }
     .map-grid { display: flex; flex-direction: column; gap: 20px; }
