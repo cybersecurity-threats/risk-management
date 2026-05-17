@@ -3,157 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Threats and Risk Management in real-world and social media</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-blue: #0056b3;
-            --accent-blue: #e7f1ff;
-            --text-dark: #212529;
-            --text-muted: #6c757d;
-            --bg-light: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 0 10%; height: 70px; background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-weight: 700; color: var(--primary-blue); font-size: 1.1rem; text-transform: uppercase; }
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav ul li a { text-decoration: none; color: var(--text-dark); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
-        nav ul li a:hover { color: var(--primary-blue); }
-
-        header { background: var(--white); padding: 100px 15% 80px; text-align: center; border-bottom: 1px solid #eee; }
-        .badge { display: inline-block; padding: 6px 16px; background: var(--accent-blue); color: var(--primary-blue); border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
-        header h1 { font-size: 2.4rem; margin-bottom: 20px; font-weight: 700; color: #1a1a1a; line-height: 1.2; }
-        header p { color: var(--text-muted); max-width: 850px; margin: 0 auto; font-size: 1.15rem; }
-
-        .section-container { padding: 80px 10%; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 1.8rem; font-weight: 700; color: var(--text-dark); position: relative; padding-bottom: 15px; }
-        .section-title h2::after { content: ''; width: 60px; height: 3px; background: var(--primary-blue); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid #f0f0f0; transition: transform 0.3s ease; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.25rem; font-weight: 600; }
-        .card p { font-size: 0.95rem; color: var(--text-muted); }
-
-        /* --- NEW FRAMEWORK STYLES --- */
-        .diagram-wrapper { background: var(--white); padding: 40px; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid #eee; margin-bottom: 50px; text-align: center; overflow-x: auto; }
-        .diagram-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 20px; font-weight: 600; text-transform: uppercase; }
-        
-        /* HRMF Visual Concept */
-        .hrmf-viz { display: flex; align-items: center; justify-content: center; gap: 40px; min-width: 600px; padding: 20px; }
-        .box { padding: 20px; border: 2px solid var(--primary-blue); border-radius: 8px; font-weight: 700; font-size: 0.9rem; background: var(--white); color: var(--primary-blue); min-width: 150px; }
-        .box.mediator { background: var(--primary-blue); color: var(--white); border: none; }
-        .arrow { font-size: 1.5rem; color: var(--primary-blue); font-weight: bold; }
-
-        /* Convergence Circles */
-        .convergence-viz { position: relative; width: 300px; height: 200px; margin: 0 auto; }
-        .circle { position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--primary-blue); background: rgba(0, 86, 179, 0.1); display: flex; align-items: center; justify-content: center; padding: 20px; font-weight: 600; font-size: 0.85rem; }
-        .circle.left { left: 0; }
-        .circle.right { right: 0; background: rgba(231, 241, 255, 0.6); }
-        .risk-zone { position: absolute; top: 75px; left: 110px; z-index: 10; font-weight: 800; color: var(--primary-blue); text-shadow: 0 0 5px white; }
-
-        #stats { background: var(--primary-blue); color: var(--white); text-align: center; padding: 50px 10%; }
-        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
-        .stat-item h2 { font-size: 2.8rem; margin-bottom: 5px; font-weight: 700; }
-        .stat-item p { font-size: 0.95rem; opacity: 0.9; font-weight: 400; }
-
-        footer { background: #ffffff; padding: 50px 10%; border-top: 1px solid #eee; font-size: 0.9rem; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-        .footer-col h4 { color: var(--text-dark); margin-bottom: 15px; font-size: 1rem; }
-        .footer-col p { color: var(--text-muted); line-height: 1.8; margin-bottom: 4px; }
-    </style>
+    <title>Cybersecurity Threats and Risk Management - Senior Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-    <div class="logo">Senior Research Project</div>
+    <div class="logo">CYBER-RISK PROJECT</div>
     <ul>
-        <li><a href="#about">Abstract</a></li>
-        <li><a href="#framework">Proposed HRMF</a></li>
-        <li><a href="#results">Research Findings</a></li>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#framework">FRAMEWORK</a></li>
+        <li><a href="#quiz">QUIZ</a></li>
+        <li><a href="#threats">THREATS</a></li>
     </ul>
 </nav>
 
-<header id="about">
-    <div class="badge">UNIVERSITY OF BAHRAIN | ITIS 499 SENIOR PROJECT</div>
+<header>
+    <div class="badge">SENIOR RESEARCH PROJECT 2026</div>
     <h1>Cybersecurity Threats and Risk Management in real-world and social media</h1>
-    <p>We propose the <strong>Holistic Risk Management Framework (HRMF)</strong> to study the critical mediation role of social media exposure in individual cybersecurity resilience and behavior.</p>
+    <p>A comprehensive research focused on a Holistic Risk Management Framework (HRMF) to bridge the gap between public awareness and evolving digital threats.</p>
 </header>
 
-<section id="stats">
-    <div class="stat-grid">
-        <div class="stat-item">
-            <h2>68%</h2>
-            <p>Threats linked to the Human Factor</p>
-        </div>
-        <div class="stat-item">
-            <h2>208</h2>
-            <p>Total Survey Participants</p>
-        </div>
-        <div class="stat-item">
-            <h2>HRMF</h2>
-            <p>Our Proposed Framework</p>
-        </div>
-    </div>
-</section>
-
-<section id="framework" class="section-container">
-    <div class="section-title"><h2>The Proposed HRMF</h2></div>
+<section id="framework">
+    <div class="section-title">Research Framework Map</div>
+    <div class="section-subtitle">Mind Map for the Hypotheses of the Holistic Risk Management Framework (HRMF)</div>
     
-    <div class="grid" style="margin-bottom: 60px;">
-        <div class="card">
-            <h3>Technical Factors</h3>
-            <p>Analyzing the effectiveness of automated defense mechanisms like MFA and AI-driven detection systems in mitigating external threats.</p>
+    <div class="framework-map-container">
+        
+        <div class="variable-headers">
+            <div>Independent Variables - Inputs<br>(Socio-Technical System)</div>
+            <div></div>
+            <div>Mediating Variable<br>(Mediator)</div>
+            <div></div>
+            <div>Dependent Variable - Outputs<br>(Digital Resilience)</div>
         </div>
-        <div class="card">
-            <h3>Behavioral Factors</h3>
-            <p>Investigating the "human firewall" through psychological triggers like urgency and curiosity that often lead to security failures.</p>
-        </div>
-        <div class="card">
-            <h3>Social Media Exposure</h3>
-            <p>Defining the "Risk Bridge" where oversharing significantly mediates the link between user habits and total digital risk.</p>
-        </div>
-    </div>
-
-    <div class="section-title"><h3>Visualizing the Models</h3></div>
-    
-    <div class="diagram-wrapper">
-        <div class="hrmf-viz">
-            <div class="box-group">
-                <div class="box" style="margin-bottom: 20px;">Technical Factors</div>
-                <div class="box">Behavioral Factors</div>
+        
+        <div class="map-grid">
+            
+            <div class="map-card card-behavioral">
+                <h4>1-Behavioral Factors</h4>
+                <ul>
+                    <li>Digital Impulsivity</li>
+                    <li>Cognitive Biases</li>
+                    <li>Psychological Awareness</li>
+                </ul>
             </div>
-            <div class="arrow">→</div>
-            <div class="box mediator">Social Media Exposure<br><small>(The Mediator)</small></div>
-            <div class="arrow">→</div>
-            <div class="box" style="border-style: dashed;">Digital Resilience</div>
-        </div>
-        <p class="diagram-label">Figure 2: Proposed Holistic Risk Management Framework (HRMF)</p>
-    </div>
+            
+            <div class="map-card card-technical">
+                <h4>2-Technical Factors</h4>
+                <ul>
+                    <li>Protection Tools (e.g., MFA)</li>
+                    <li>Effectiveness of Traditional Software</li>
+                    <li>Use of Artificial Intelligence in Defense</li>
+                </ul>
+            </div>
+            
+            <div class="vector-path path-h1">
+                <span class="label-h1">H1</span>
+            </div>
+            
+            <div class="vector-path path-h2">
+                <span class="label-h2">H2</span>
+            </div>
+            
+            <div class="map-card card-mediator">
+                <h4>3-Social Media Exposure</h4>
+                <ul>
+                    <li>Oversharing</li>
+                    <li>Privacy Settings</li>
+                    <li>Digital Footprint (OSINT)</li>
+                </ul>
+            </div>
+            
+            <div class="vector-path path-h3">
+                <span class="label-h3">H3</span>
+            </div>
+            
+            <div class="map-card card-dependent">
+                <h4>4-Digital Resilience</h4>
+                <ul>
+                    <li>Threat Detection</li>
+                    <li>Incident Response Speed</li>
+                    <li>Loss Mitigation</li>
+                </ul>
+            </div>
+            
+            <div class="path-h4-container">
+                <span class="label-h4">H4</span>
+                <div class="line-h4"></div>
+            </div>
+            
+            <div class="path-h5-container">
+                <div class="line-h5"></div>
+                <span class="label-h5">H5</span>
+            </div>
 
-    <div class="diagram-wrapper">
-        <div class="convergence-viz">
-            <div class="circle left">Technical<br>Exploits</div>
-            <div class="circle right">Social Media<br>Exposure</div>
-            <div class="risk-zone">HIGH RISK<br>ZONE</div>
         </div>
-        <p class="diagram-label">Figure 1: The Convergence of Exposure and Technical Exploits</p>
     </div>
 </section>
 
-<section id="results" class="section-container" style="background: var(--white);">
-    <div class="section-title"><h2>Key Research Findings</h2></div>
-    <div class="grid">
-        <div class="card">
-            <h3>Significant Mediation</h3>
-            <p>The research confirms that social media exposure is a primary mediator; high sharing levels directly influence an individual's security adherence.</p>
+<section id="quiz">
+    <div class="quiz-container">
+        <h2>CHECK YOUR RISK LEVEL</h2>
+        <p>Have you enabled Multi-Factor Authentication (MFA)?</p>
+        <div class="quiz-option">Yes, on all accounts</div>
+        <div class="quiz-option">Yes, on sensitive accounts only</div>
+        <div class="quiz-option">No, I find it too time-consuming</div>
+        <div class="quiz-option">I am not sure what MFA is</div>
+    </div>
+</section>
+
+<section id="threats">
+    <div id="threats-area">
+        <div class="section-title">Primary Research Targets</div>
+        <div class="threat-list">
+            <div class="threat-item">Phishing Attacks</div>
+            <div class="threat-item">Ransomware</div>
+            <div class="threat-item">Social Engineering</div>
         </div>
-        <div class="card">
-            <h3>The Perception Gap</h3>
-            <p>Our study reveals a disconnect where individuals perceive high threat levels but remain
+    </div>
+</section>
+
+<footer id="team">
+    <p><strong>Research Team:</strong> Sara Mohammed Abdulla, Khadija Abdulla Mohamed, Lujain Hussain Alashwan</p>
+    <p class="team">University of Bahrain | ITIS 499 Senior Project | Supervisor: Dr. Ali Zoliat</p>
+    <p style="margin-top:20px; font-size: 0.7rem;">&copy; 2026 | info@cyber-risk-study.com</p>
+</footer>
+
+</body>
+</html>
