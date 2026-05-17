@@ -1,0 +1,378 @@
+:root {
+    --bg-warm-charcoal: #221F1E; 
+    --grid-line: rgba(255, 255, 255, 0.03);
+    
+    /* Card Colors (Desaturated Middle Shades) */
+    --sage-card: #7D9385;
+    --terracotta-card: #B67352;
+    --plum-card: #8A6B8A;
+    --mustard-quiz: #C4A46D;
+    
+    --text-black: #000000;
+    --header-height: 80px;
+}
+
+* { 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-warm-charcoal);
+    color: var(--text-black);
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+}
+
+/* NAVIGATION HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    height: var(--header-height);
+    background: rgba(34, 31, 30, 0.98);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+}
+
+nav ul li a { 
+    text-decoration: none; 
+    color: #ccc; 
+    font-size: 0.8rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+}
+
+/* HERO SECTION */
+header { 
+    text-align: center; 
+    padding: 100px 10% 40px; 
+}
+
+.badge { 
+    display: inline-block; 
+    padding: 5px 15px; 
+    border: 1px solid #fff; 
+    border-radius: 20px; 
+    color: #fff; 
+    font-size: 0.7rem; 
+    font-family: 'Orbitron'; 
+    margin-bottom: 20px; 
+}
+
+header h1 { 
+    font-family: 'Orbitron'; 
+    font-size: 2.8rem; 
+    color: #fff; 
+    margin-bottom: 20px; 
+}
+
+header p { 
+    color: #aaa; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    font-size: 1.1rem; 
+}
+
+.section-title { 
+    font-family: 'Orbitron'; 
+    text-align: center; 
+    color: #fff; 
+    margin: 40px 0 10px; 
+    font-size: 1.5rem; 
+    letter-spacing: 3px; 
+    text-transform: uppercase; 
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+}
+
+/* ADVANCED MODEL MAP LAYOUT WITH STRUCTURAL ARROWS */
+.framework-map-container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 20px 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Column Labels Track */
+.variable-headers {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr 120px 1fr;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #aaa;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Core Structural Grid */
+.map-grid {
+    display: grid;
+    grid-template-columns: 1fr 120px 1fr 120px 1fr;
+    align-items: center;
+    position: relative;
+}
+
+/* Framework Model Variables Styles */
+.map-card {
+    padding: 25px 20px;
+    border-radius: 12px;
+    color: var(--text-black);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.map-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 6px;
+}
+
+.map-card ul {
+    list-style: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.map-card ul li {
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.map-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: rgba(0,0,0,0.5);
+}
+
+/* Specific Block Allocations */
+.card-behavioral { background-color: var(--terracotta-card); grid-column: 1; grid-row: 1; margin-bottom: 30px; }
+.card-technical { background-color: var(--sage-card); grid-column: 1; grid-row: 3; margin-top: 30px; }
+.card-mediator { background-color: var(--plum-card); grid-column: 3; grid-row: 2; }
+.card-dependent { background-color: #E2E2E2; grid-column: 5; grid-row: 2; border: 2px solid #fff; }
+
+/* Structural Vector Paths (The Connector Lines) */
+.vector-path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+/* H1 Cross-Diagonal Path (Behavioral down to Media) */
+.path-h1 {
+    grid-column: 2; grid-row: 1 / span 2;
+    height: 100%;
+    background: linear-gradient(to bottom right, transparent 49%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 52%, transparent 53%);
+}
+.label-h1 { position: absolute; top: 40%; left: 30%; }
+
+/* H2 Cross-Diagonal Path (Technical up to Media) */
+.path-h2 {
+    grid-column: 2; grid-row: 2 / span 2;
+    height: 100%;
+    background: linear-gradient(to top right, transparent 49%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 52%, transparent 53%);
+}
+.label-h2 { position: absolute; bottom: 40%; left: 30%; }
+
+/* H3 Straight Path (Media to Resilience) */
+.path-h3 {
+    grid-column: 4; grid-row: 2;
+    height: 2px;
+    background-color: rgba(255,255,255,0.3);
+}
+.path-h3::after {
+    content: "►";
+    position: absolute;
+    right: -4px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.6rem;
+}
+.label-h3 { margin-bottom: 20px; }
+
+/* H4 Long Horizontal Path (Behavioral bypassing straight to Resilience) */
+.path-h4-container {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding-top: 40px;
+}
+.line-h4 {
+    height: 2px;
+    background-color: rgba(255,255,255,0.15);
+    width: 100%;
+    position: relative;
+}
+.line-h4::after {
+    content: "►";
+    position: absolute;
+    right: -4px; top: -5px;
+    color: rgba(255,255,255,0.15);
+    font-size: 0.6rem;
+}
+.label-h4 { text-align: center; margin-bottom: 6px; }
+
+/* H5 Long Horizontal Path (Technical bypassing straight to Resilience) */
+.path-h5-container {
+    grid-column: 2 / span 3;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    padding-bottom: 40px;
+}
+.line-h5 {
+    height: 2px;
+    background-color: rgba(255,255,255,0.15);
+    width: 100%;
+    position: relative;
+}
+.line-h5::after {
+    content: "►";
+    position: absolute;
+    right: -4px; top: -5px;
+    color: rgba(255,255,255,0.15);
+    font-size: 0.6rem;
+}
+.label-h5 { text-align: center; margin-top: 6px; }
+
+
+/* QUIZ AREA */
+#quiz { 
+    padding: 40px 8% 60px; 
+}
+
+.quiz-container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    background: var(--mustard-quiz); 
+    padding: 40px; 
+    border-radius: 20px; 
+    color: var(--text-black); 
+}
+
+.quiz-container h2 {
+    font-family: 'Orbitron'; 
+    margin-bottom: 10px;
+}
+
+.quiz-container p {
+    margin-bottom: 20px;
+}
+
+.quiz-option { 
+    background: rgba(0,0,0,0.1); 
+    border: 1px solid rgba(0,0,0,0.2); 
+    padding: 15px; 
+    margin: 10px 0; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.2s; 
+}
+
+.quiz-option:hover { 
+    background: rgba(0,0,0,0.2); 
+}
+
+/* THREATS AREA */
+#threats-area { 
+    padding: 40px 8% 100px; 
+    text-align: center; 
+}
+
+.threat-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 20px; 
+}
+
+.threat-item { 
+    background: var(--sage-card); 
+    color: var(--text-black); 
+    padding: 12px 30px; 
+    border-radius: 50px; 
+    font-weight: 700; 
+    font-family: 'Orbitron'; 
+    font-size: 0.9rem; 
+}
+
+/* FOOTER */
+footer { 
+    background: #1a1817; 
+    padding: 60px 8%; 
+    text-align: center; 
+    color: #777; 
+    border-top: 1px solid #333; 
+}
+
+.team { 
+    color: #999; 
+    margin-top: 10px; 
+    font-size: 0.9rem; 
+}
+
+/* Responsiveness adjustments for tracking framework viewports */
+@media (max-width: 900px) {
+    .variable-headers { display: none; }
+    .map-grid { display: flex; flex-direction: column; gap: 20px; }
+    .vector-path, .path-h4-container, .path-h5-container { display: none; }
+    .map-card { min-height: auto; width: 100%; }
+}
